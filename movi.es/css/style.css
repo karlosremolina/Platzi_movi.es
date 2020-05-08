@@ -1,0 +1,222 @@
+html, body{
+  display: grid;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* container principal */
+.container{
+  background: #fff;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 70px 1fr 50px;
+  grid-template-areas: "header header"
+                       "barra principal"
+                       "barra footer";
+}
+.container header{
+  grid-area: header;
+  box-shadow: 0 3px 5px  rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  padding: 5px 20px;
+}
+.container aside{
+  grid-area: barra;
+  background: hsl(350, 79%, 55%);
+  position: relative;
+
+}
+.container section{
+  grid-area: principal;
+}
+.container footer{
+  grid-area: footer;
+  justify-self: center;
+}
+/* Header */
+.header-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.header-container .logo{
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  color: red;
+  font-weight: bold;
+}
+    .header-container img{
+      height: 50px;
+    }
+
+.header-container .buscador{
+  width: 40%;
+}
+    .header-container .buscador input{
+      border: 1px solid gray;
+      border-radius: 5px 5px;
+      margin: 0;
+      height: 30px;
+      width: 100%;
+    }
+    .header-container .buscador input:hover, .header-container .buscador input:focus{
+      border: 1px solid red;
+      outline: none;
+    }
+.header-container .perfil{
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+}
+    .header-container .perfil-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .header-container .perfil-container .perfil-image{
+      background:rgb(142, 236, 216);
+      border-radius: 50px 50px;
+      height: 40px;
+      overflow: hidden;
+      margin: 0 5px 0 10px;
+      width: 40px;
+    }
+    .header-container .perfil-container .perfil-image img{
+      border-radius: 100px 100px;
+    }
+/* Menu expandible header*/
+.perfil .perfil-checkbox{
+  display: block;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+}
+.perfil .menu-expandible{
+  background:hsl(350, 79%, 55%);
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 200px;
+}
+    .perfil .menu-expandible ul{
+      box-sizing: border-box;
+      padding: 0;
+      padding-left: 20px;
+      width: 100%;
+    }
+    .perfil .menu-expandible ul a{
+      text-decoration: none;
+      color: #fff;
+    }
+    .perfil .menu-expandible ul a li{
+      list-style: none;
+    }
+    .perfil .perfil-checkbox:checked ~ .menu-expandible{
+      display: block;
+    }
+
+/* Menu barra lateral */
+.menu .menu-container{
+  display: flex;
+  height: 100%;
+  position: fixed;
+  flex-wrap: wrap;
+}
+.menu .menu-container div{
+  box-sizing: border-box;
+  padding: 10px 0;
+  width: 100%;
+}
+.menu .menu-container .menu-ajustes{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+  justify-content: center;
+  align-items: flex-end;
+}
+.menu p{
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.menu p a{
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+.menu p a span{
+  color: #fff;;
+  display: block;
+  font-size: 32px;
+}
+
+/* Parte principal main */
+.main{
+  padding: 30px;
+}
+.categoria{
+  display: flex;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.categoria .item{
+  position: relative;
+  background: #f2f2f2;
+  overflow: hidden;
+  height: 200px;
+  width: 300px;
+}
+.item img{
+  position: absolute;
+  height: 100%;
+}
+.item .item-container{
+  background: rgb(231, 50, 80, 0.8);
+  box-sizing: border-box;
+  color: #fff;
+  bottom: 0;
+  position: absolute;
+  padding: 10px;
+  height: 50%;
+  width: 100%;
+}
+.item .item-container p{
+  margin: 0;
+  font-size: 20px;
+}
+.item .item-container span{
+  font-size: 13px;
+}
+/* media queries */
+@media (max-width: 768px) {
+  
+  .container{
+    grid-template-columns: 70px 1fr;
+  }
+
+  .perfil-usuario{
+      display: none;
+  }
+  .item{
+      margin-bottom: 20px;
+  }
+  .main .categoria{
+      justify-content: center;
+  }
+  .main .categoria .item{
+      width: 100%;
+  }
+
+  /* menu opciones */
+  .menu .menu-container{
+    width: 70px;
+  }
+  
+}

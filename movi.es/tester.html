@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tester</title>
+    <link rel="stylesheet" href="https://i.icomoon.io/public/temp/40bfe85f46/UntitledProject/style.css">
+    <style>
+        html, body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            height: 100%;
+            padding: 0;
+        }
+        .hero{
+            height: 100%;
+        }
+        .hero {
+            display: grid;
+            grid-template: 100px 1fr / 100px 1fr;
+            grid-template-areas: "header header" "aside main";
+        }
+        .hero header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-area: header;
+            background: #f2f2f2;
+        }
+        .hero aside{
+            grid-area: aside;
+            background: rgb(41, 196, 207);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .hero main{
+            grid-area: main;
+            background: #232323;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        .menu{
+            position: fixed;
+            
+        }
+    </style>
+        <link rel="stylesheet" href="css/style.css">
+    <style>
+        .menu-toggle{
+            position: relative;
+        }
+        .menu-toggle input{
+            display: block;
+            height: 32px;
+            top: -3px;
+            left: -5px;
+            position: absolute;
+            opacity: 0;
+            width: 40px;
+        }
+        .menu-contenido{
+            background: #f2f2f2;
+            position: absolute;
+            padding: 50px;
+        }
+        .open-menu, .close-menu{
+            color: #fff;
+            font-size: 32px;
+            display: block;
+            height: 32px;
+            width: 35px;
+        }
+        .close-menu{
+            display: none;
+        }
+        input:checked ~ .menu-contenido, input:checked ~ .open-menu{
+            display: none;
+        }
+        input:checked ~ .close-menu{
+            display: block;
+        }
+        .menu-toggle ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .menu-toggle ul li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <header>
+            <p>header</p>
+        </header>
+        <aside>
+            <div class="menu">
+                <p>aside</p>
+            </div>
+        </aside>
+
+        <main>
+
+            <div class="opciones-perfil">
+                <div class="menu-toggle">
+                    <input type="checkbox">
+
+                    <span class="icon-circle-down open-menu"></span>
+                    <span class="icon-circle-up close-menu"></span>
+
+                    <div class="menu-contenido">
+                        <ul>
+                            <a href=""><li>link</li></a>
+                            <a href=""><li>link</li></a>
+                            <a href=""><li>link</li></a>
+                            <a href=""><li>link</li></a>
+                            <a href=""><li>link</li></a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+</body>
+</html>
